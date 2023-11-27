@@ -27,7 +27,7 @@ public class Post {
     @Column(length = 16384)
     private String text;
 
-    private Long viewsAmount;
+    private long viewsAmount;
 
     public Post(String title, String text) {
         this.title = title;

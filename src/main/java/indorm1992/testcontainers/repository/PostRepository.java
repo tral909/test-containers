@@ -11,7 +11,7 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     @Query(value = """
             UPDATE posts
             SET views_amount = views_amount + 1
-            WHERE id = :id;
+            WHERE id = :id
             """, nativeQuery = true)
     @Modifying
     void addView(@Param("id") long id);

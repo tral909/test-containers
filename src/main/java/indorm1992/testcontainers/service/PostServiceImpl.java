@@ -19,10 +19,9 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public Post getById(long id) {
-        Post post = postRepository.findById(id)
-                .orElseThrow(PostNotFoundException::new);
         postRepository.addView(id);
-        return post;
+        return postRepository.findById(id)
+                .orElseThrow(PostNotFoundException::new);
     }
 
     @Override
